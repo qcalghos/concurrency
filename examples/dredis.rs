@@ -1,5 +1,5 @@
 //cargo add tokio --features rt --features rt-multi-thread --features macros --features net --features io-util
-// cargo add tracing 
+// cargo add tracing
 //cargo add tracing-subscriber --features env-filter
 //cargo run --example dredis
 ///powershell 下设置rust log的写法。
@@ -52,6 +52,6 @@ async fn process_redis_conn(mut stream: tokio::net::TcpStream, raddr: SocketAddr
         }
     }
 
-    warn!("connection {} clossed.", raddr);
+    warn!("connection {} closed.", raddr);
     Ok(())
 }

@@ -6,23 +6,23 @@ const N: usize = 2;
 const M: usize = 4;
 fn main() -> Result<()> {
     let metrics = Metrics::new();
-    println!("{:?}",metrics.snapshot());
+    println!("{:?}", metrics.snapshot());
     for idx in 0..N {
-        task_worker(idx, metrics.clone());//Arc::clone(&metrics.data)
+        task_worker(idx, metrics.clone()); //Arc::clone(&metrics.data)
     }
     for _ in 0..M {
         request_worker(metrics.clone());
     }
-    loop {
-        thread::sleep(Duration::from_secs(5));
-        println!("{:?}",metrics.snapshot().unwrap());
-    }
+    // loop {
+    //     thread::sleep(Duration::from_secs(5));
+    //     println!("{:?}",metrics.snapshot().unwrap());
+    // }
     // println!("{:?}", metrics.snapshot());
-    
+
     Ok(())
 }
 
-fn task_worker(idx: usize,metrics: Metrics) {
+fn task_worker(idx: usize, metrics: Metrics) {
     thread::spawn(move || loop {
         let mut rng = rand::thread_rng();
 

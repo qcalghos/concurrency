@@ -1,6 +1,6 @@
-mod metrics;
 mod matrix;
-mod vector;
+mod metrics;
+// mod vector;
 
+pub use matrix::{multiply, Matrix};
 pub use metrics::Metrics;
-pub use matrix::{Matrix,multiply};
