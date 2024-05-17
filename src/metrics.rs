@@ -4,10 +4,12 @@ use std::{
     collections::HashMap,
     sync::{Arc, Mutex},
 };
+
 #[derive(Debug, Clone)]
 pub struct Metrics {
     data: Arc<Mutex<HashMap<String, i64>>>,
 }
+
 impl Metrics {
     pub fn new() -> Self {
         Self {

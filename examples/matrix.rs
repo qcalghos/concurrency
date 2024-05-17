@@ -1,5 +1,5 @@
 use anyhow::Result;
-use concurrency::{multiply, Matrix};
+use concurrency::Matrix;
 
 fn main() -> Result<()> {
     let a = Matrix {
@@ -12,7 +12,7 @@ fn main() -> Result<()> {
         row: 3,
         col: 2,
     };
-    let multi = multiply(&a, &b).unwrap();
-    println!("{:?}", multi.data);
+    let multi = a * b;
+    println!("a*b:{}", multi);
     Ok(())
 }
