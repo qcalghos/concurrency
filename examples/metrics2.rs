@@ -1,7 +1,7 @@
 use std::{thread, time::Duration};
 
 use anyhow::Result;
-use concurrency::metrics::Metrics;
+use concurrency::metrics2::Metrics;
 use rand::Rng;
 const N: usize = 2;
 const M: usize = 4;
@@ -17,7 +17,8 @@ fn main() -> Result<()> {
     }
     loop {
         thread::sleep(Duration::from_secs(3));
-        println!("{:?}", metrics.snapshot());
+        // println!("{:?}", metrics.snapshot());
+        println!("{}", metrics);
     }
 }
 fn task_worker(idx: usize, metrics: Metrics) -> Result<()> {

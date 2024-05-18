@@ -13,3 +13,10 @@ cargo run --example thread1
 ```bash
 cargo run --example matrix
 ```
+
+### examples/matrix.rs,matrix1.rs
+```bash
+cargo run --example metrics
+cargo run --example metrics1
+cargo run --example metrics2
+```
