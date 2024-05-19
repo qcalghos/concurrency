@@ -20,5 +20,6 @@ cargo run --example matrix
 cargo run --example metrics  ## HashMap
 cargo run --example metrics1 ## Arc<Mutex<HashMap>>
 cargo run --example metrics2 ## Arc<RwLock<HashMap>>
-cargo run --example metrics3 ## Arc<DashMap>
+cargo run --example cmap ## Arc<DashMap>
+cargo run --example amap
 ```
